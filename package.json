@@ -19,8 +19,8 @@
       "title": "Django Test Path Extension Configuration",
       "properties": {
         "djangoTestPath.testCommand": {
-          "type":"string",
-          "default":"./manage.py test",
+          "type": "string",
+          "default": "./manage.py test",
           "description": "Command that will be use when copying a command test Django test command"
         }
       }
@@ -130,5 +130,5 @@
     "postinstall": "node ./node_modules/vscode/bin/install",
     "test": "node ./node_modules/vscode/bin/test"
   },
-  "version": "0.0.1"
+  "version": "0.1.0"
 }
