@@ -105,7 +105,7 @@ function generatePythonCommandWithSelection(pythonPath, selections) {
     const selection = selections[0].trim();
     return `${testCommand} ${pythonPath}.${selection}`;
   }
-  const selection = selections.map(s => `${testCommand} ${pythonPath}.${s.trim()}`).join(" ");
+  const selection = `${testCommand} ${selections.map(s => `${pythonPath}.${s.trim()}`).join(" ")}`;
   return selection;
 }
 
