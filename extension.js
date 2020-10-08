@@ -3,7 +3,7 @@ const fs = require('fs');
 const clipboardy = require('clipboardy');
 const path = require('path');
 
-const testCommand = vscode.workspace.getConfiguration('djangoTestPath').get('testCommand')
+
 
 function getPythonPath(filePath) {
   const splittedPath = filePath.split(path.sep);
@@ -64,6 +64,7 @@ function copyDjangoTestPath(uri) {
 
 function copyDjangoTestCommand(uri) {
   try {
+    let testCommand = vscode.workspace.getConfiguration('djangoTestPath').get('testCommand')
     const filePath = uri
       ? uri.fsPath
       : vscode.window.activeTextEditor.document.fileName;
@@ -86,7 +87,7 @@ function copyDjangoTestCommand(uri) {
       clipboardy.writeSync(pathStatement);
     }
     if (pythonPath && selections.length == 0) {
-      clipboardy.writeSync(`${testCommand} pythonPath`);
+      clipboardy.writeSync(`${testCommand} ${pythonPath}`);
     }
   } catch (e) {
     console.log(e);
@@ -94,6 +95,7 @@ function copyDjangoTestCommand(uri) {
 }
 
 function generatePythonCommandWithSelection(pythonPath, selections) {
+  let testCommand = vscode.workspace.getConfiguration('djangoTestPath').get('testCommand')
   if (selections.length == 0) {
     return `${testCommand} ${pythonPath}`;
   } else if (selections.length == 1) {
