@@ -3,8 +3,6 @@ const fs = require('fs');
 const clipboardy = require('clipboardy');
 const path = require('path');
 
-
-
 function getPythonPath(filePath) {
   const splittedPath = filePath.split(path.sep);
   if (
@@ -73,7 +71,12 @@ function copyDjangoTestCommand(uri) {
       .map(s => {
         let start = s.start
         if (vscode.window.activeTextEditor.document.lineAt(start.line).text.slice(start.character-4, start.character-1) === "def") {
-          let className = vscode.window.activeTextEditor.document.getText().split('\n').slice(0, start.line).reverse().find(s => s.match("(:?^|\s)class")).split(' ')[1].split('(')[0]
+          let className = vscode.window.activeTextEditor.document
+          .getText()
+          .split('\n')
+          .slice(0, start.line)
+          .reverse()
+          .find(s => s.match("(:?^|\s)class")).split(' ')[1].split('(')[0]
           return className+"."+ vscode.window.activeTextEditor.document.getText(s)
         } else if (vscode.window.activeTextEditor.document.lineAt(start.line).text.slice(start.character-6, start.character-1) === "class") {
           return vscode.window.activeTextEditor.document.getText(s)
