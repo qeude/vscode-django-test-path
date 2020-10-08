@@ -1,0 +1,130 @@
+{
+  "activationEvents": [
+    "onLanguage:python",
+    "onCommand:extension.copyDjangoTestPath",
+    "onCommand:extension.copyDjangoTestCommand"
+  ],
+  "author": {
+    "name": "Quentin Eude"
+  },
+  "categories": [
+    "Programming Languages",
+    "Snippets",
+    "Formatters",
+    "Other",
+    "Extension Packs"
+  ],
+  "contributes": {
+    "configuration": {
+      "title": "Django Test Path Extension Configuration",
+      "properties": {
+        "djangoTestPath.testCommand": {
+          "type":"string",
+          "default":"./manage.py test",
+          "description": "Command that will be use when copying a command test Django test command"
+        }
+      }
+    },
+    "commands": [
+      {
+        "command": "extension.copyDjangoTestPath",
+        "title": "Copy Django test path",
+        "when": "resourceLangId == python"
+      },
+      {
+        "command": "extension.copyDjangoTestCommand",
+        "title": "Copy Django test command",
+        "when": "resourceLangId == python"
+      }
+    ],
+    "keybindings": [
+      {
+        "command": "extension.copyDjangoTestPath",
+        "key": "ctrl+y",
+        "mac": "cmd+y"
+      },
+      {
+        "command": "extension.copyDjangoTestCommand",
+        "key": "ctrl+i",
+        "mac": "cmd+i"
+      }
+    ],
+    "menus": {
+      "editor/context": [
+        {
+          "command": "extension.copyDjangoTestPath",
+          "group": "9_cutcopypaste@30000",
+          "title": "Copy Django test path",
+          "when": "resourceLangId == python"
+        },
+        {
+          "command": "extension.copyDjangoTestCommand",
+          "group": "9_cutcopypaste@30000",
+          "title": "Copy Django test command",
+          "when": "resourceLangId == python"
+        }
+      ],
+      "editor/title/context": [
+        {
+          "command": "extension.copyDjangoTestPath",
+          "group": "1_cutcopypaste@30000",
+          "title": "Copy Django test path",
+          "when": "resourceLangId == python"
+        },
+        {
+          "command": "extension.copyDjangoTestCommand",
+          "group": "1_cutcopypaste@30000",
+          "title": "Copy Django test command",
+          "when": "resourceLangId == python"
+        }
+      ],
+      "explorer/context": [
+        {
+          "command": "extension.copyDjangoTestPath",
+          "group": "5_cutcopypaste@30000",
+          "title": "Copy Django test path",
+          "when": "resourceLangId == python"
+        },
+        {
+          "command": "extension.copyDjangoTestCommand",
+          "group": "5_cutcopypaste@30000",
+          "title": "Copy Django test command",
+          "when": "resourceLangId == python"
+        }
+      ]
+    }
+  },
+  "contributors": [],
+  "dependencies": {
+    "clipboardy": "^2.3.0"
+  },
+  "description": "VSCode tool to easily run your tests.",
+  "devDependencies": {
+    "@types/mocha": "^8.0.3",
+    "@types/node": "^14.11.5",
+    "eslint": "^7.10.0",
+    "typescript": "^4.0.3",
+    "vscode": "^1.1.6"
+  },
+  "displayName": "Django test path",
+  "engines": {
+    "vscode": "^1.22.0"
+  },
+  "galleryBanner": {
+    "color": "#1e415e",
+    "theme": "dark"
+  },
+  "keywords": [
+    "django",
+    "test",
+    "python"
+  ],
+  "main": "./extension",
+  "name": "django-test-path",
+  "publisher": "qeude",
+  "scripts": {
+    "postinstall": "node ./node_modules/vscode/bin/install",
+    "test": "node ./node_modules/vscode/bin/test"
+  },
+  "version": "0.0.1"
+}
