@@ -11,7 +11,7 @@ Commands are accessible from:
 - Editor title contextual menu
 
 ## 👨🏻‍🏫 Basic example
-<img src="./images/demo.gif">
+![Basic example](https://raw.githubusercontent.com/qeude/vscode-django-test-path/main/images/demo.gif)
 
 ## 🛠 Settings
 The test command added to the copied path can be changed in the VSCode Preferences.
