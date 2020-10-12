@@ -16,7 +16,7 @@
   ],
   "contributes": {
     "configuration": {
-      "title": "Django Test Path Extension Configuration",
+      "title": "Copy Django Test Path Extension Configuration",
       "properties": {
         "djangoTestPath.testCommand": {
           "type": "string",
@@ -54,13 +54,13 @@
         {
           "command": "extension.copyDjangoTestPathWithoutCommand",
           "group": "9_cutcopypaste@30000",
-          "title": "Copy Django test path",
+          "title": "Copy Django Test Path Without Command Prefix",
           "when": "resourceLangId == python"
         },
         {
           "command": "extension.copyDjangoTestPathWithCommand",
           "group": "9_cutcopypaste@30000",
-          "title": "Copy Django test command",
+          "title": "Copy Django Test Path With Command Prefix",
           "when": "resourceLangId == python"
         }
       ],
@@ -68,13 +68,13 @@
         {
           "command": "extension.copyDjangoTestPathWithoutCommand",
           "group": "1_cutcopypaste@30000",
-          "title": "Copy Django test path",
+          "title": "Copy Django Test Path Without Command Prefix",
           "when": "resourceLangId == python"
         },
         {
           "command": "extension.copyDjangoTestPathWithCommand",
           "group": "1_cutcopypaste@30000",
-          "title": "Copy Django test command",
+          "title": "Copy Django Test Path With Command Prefix",
           "when": "resourceLangId == python"
         }
       ],
@@ -82,13 +82,13 @@
         {
           "command": "extension.copyDjangoTestPathWithoutCommand",
           "group": "5_cutcopypaste@30000",
-          "title": "Copy Django test path",
+          "title": "Copy Django Test Path Without Command Prefix",
           "when": "resourceLangId == python"
         },
         {
           "command": "extension.copyDjangoTestPathWithCommand",
           "group": "5_cutcopypaste@30000",
-          "title": "Copy Django test command",
+          "title": "Copy Django Test Path With Command Prefix",
           "when": "resourceLangId == python"
         }
       ]
@@ -98,7 +98,7 @@
   "dependencies": {
     "clipboardy": "^2.3.0"
   },
-  "description": "VSCode tool to easily run your tests.",
+  "description": "VSCode tool to easily copy Django tests paths.",
   "devDependencies": {
     "@types/mocha": "^8.0.3",
     "@types/node": "^14.11.5",
@@ -106,7 +106,7 @@
     "typescript": "^4.0.3",
     "vscode": "^1.1.6"
   },
-  "displayName": "Django test path",
+  "displayName": "Copy Django Test Path",
   "engines": {
     "vscode": "^1.22.0"
   },
