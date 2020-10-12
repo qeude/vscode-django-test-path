@@ -21,7 +21,7 @@
         "djangoTestPath.testCommand": {
           "type": "string",
           "default": "./manage.py test",
-          "description": "Command that will be use when copying a command test Django test command"
+          "description": "Command that will be use when copying a Django test command"
         }
       }
     },
