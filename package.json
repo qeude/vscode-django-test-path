@@ -1,8 +1,8 @@
 {
   "activationEvents": [
     "onLanguage:python",
-    "onCommand:extension.copyDjangoTestPath",
-    "onCommand:extension.copyDjangoTestCommand"
+    "onCommand:extension.copyDjangoTestPathWithoutCommand",
+    "onCommand:extension.copyDjangoTestPathWithCommand"
   ],
   "author": {
     "name": "Quentin Eude"
@@ -27,24 +27,24 @@
     },
     "commands": [
       {
-        "command": "extension.copyDjangoTestPath",
-        "title": "Copy Django test path",
+        "command": "extension.copyDjangoTestPathWithoutCommand",
+        "title": "Copy Django Test Path Without Command Prefix",
         "when": "resourceLangId == python"
       },
       {
-        "command": "extension.copyDjangoTestCommand",
-        "title": "Copy Django test command",
+        "command": "extension.copyDjangoTestPathWithCommand",
+        "title": "Copy Django Test Path With Command Prefix",
         "when": "resourceLangId == python"
       }
     ],
     "keybindings": [
       {
-        "command": "extension.copyDjangoTestPath",
+        "command": "extension.copyDjangoTestPathWithoutCommand",
         "key": "ctrl+y",
         "mac": "cmd+y"
       },
       {
-        "command": "extension.copyDjangoTestCommand",
+        "command": "extension.copyDjangoTestPathWithCommand",
         "key": "ctrl+i",
         "mac": "cmd+i"
       }
@@ -52,13 +52,13 @@
     "menus": {
       "editor/context": [
         {
-          "command": "extension.copyDjangoTestPath",
+          "command": "extension.copyDjangoTestPathWithoutCommand",
           "group": "9_cutcopypaste@30000",
           "title": "Copy Django test path",
           "when": "resourceLangId == python"
         },
         {
-          "command": "extension.copyDjangoTestCommand",
+          "command": "extension.copyDjangoTestPathWithCommand",
           "group": "9_cutcopypaste@30000",
           "title": "Copy Django test command",
           "when": "resourceLangId == python"
@@ -66,13 +66,13 @@
       ],
       "editor/title/context": [
         {
-          "command": "extension.copyDjangoTestPath",
+          "command": "extension.copyDjangoTestPathWithoutCommand",
           "group": "1_cutcopypaste@30000",
           "title": "Copy Django test path",
           "when": "resourceLangId == python"
         },
         {
-          "command": "extension.copyDjangoTestCommand",
+          "command": "extension.copyDjangoTestPathWithCommand",
           "group": "1_cutcopypaste@30000",
           "title": "Copy Django test command",
           "when": "resourceLangId == python"
@@ -80,13 +80,13 @@
       ],
       "explorer/context": [
         {
-          "command": "extension.copyDjangoTestPath",
+          "command": "extension.copyDjangoTestPathWithoutCommand",
           "group": "5_cutcopypaste@30000",
           "title": "Copy Django test path",
           "when": "resourceLangId == python"
         },
         {
-          "command": "extension.copyDjangoTestCommand",
+          "command": "extension.copyDjangoTestPathWithCommand",
           "group": "5_cutcopypaste@30000",
           "title": "Copy Django test command",
           "when": "resourceLangId == python"
