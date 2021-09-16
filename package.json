@@ -2,7 +2,8 @@
   "activationEvents": [
     "onLanguage:python",
     "onCommand:extension.copyDjangoTestPathWithoutCommand",
-    "onCommand:extension.copyDjangoTestPathWithCommand"
+    "onCommand:extension.copyDjangoTestPathWithCommand",
+    "onCommand:extension.copyImportStatement"
   ],
   "author": {
     "name": "Quentin Eude"
@@ -35,6 +36,11 @@
         "command": "extension.copyDjangoTestPathWithCommand",
         "title": "Copy Django Test Path With Command Prefix",
         "when": "resourceLangId == python"
+      },
+      {
+        "command": "extension.copyImportStatement",
+        "title": "Copy Import Statement",
+        "when": "resourceLangId == python"
       }
     ],
     "keybindings": [
@@ -47,6 +53,11 @@
         "command": "extension.copyDjangoTestPathWithCommand",
         "key": "ctrl+i",
         "mac": "cmd+i"
+      },
+      {
+        "command": "extension.copyImportStatement",
+        "key": "ctrl+u",
+        "mac": "cmd+u"
       }
     ],
     "menus": {
@@ -62,6 +73,12 @@
           "group": "9_cutcopypaste@30000",
           "title": "Copy Django Test Path With Command Prefix",
           "when": "resourceLangId == python"
+        },
+        {
+          "command": "extension.copyImportStatement",
+          "group": "9_cutcopypaste@30000",
+          "title": "Copy Import Statement",
+          "when": "resourceLangId == python"
         }
       ],
       "editor/title/context": [
@@ -76,6 +93,12 @@
           "group": "1_cutcopypaste@30000",
           "title": "Copy Django Test Path With Command Prefix",
           "when": "resourceLangId == python"
+        },
+        {
+          "command": "extension.copyImportStatement",
+          "group": "1_cutcopypaste@30000",
+          "title": "Copy Import Statement",
+          "when": "resourceLangId == python"
         }
       ],
       "explorer/context": [
@@ -89,6 +112,12 @@
           "command": "extension.copyDjangoTestPathWithCommand",
           "group": "5_cutcopypaste@30000",
           "title": "Copy Django Test Path With Command Prefix",
+          "when": "resourceLangId == python"
+        },
+        {
+          "command": "extension.copyImportStatement",
+          "group": "5_cutcopypaste@30000",
+          "title": "Copy Import Statement",
           "when": "resourceLangId == python"
         }
       ]

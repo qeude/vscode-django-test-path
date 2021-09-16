@@ -66,6 +66,38 @@ function parseSelections() {
     });
 }
 
+function copyImportStatement(uri) {
+  try {
+    const filePath = uri
+      ? uri.fsPath
+      : vscode.window.activeTextEditor.document.fileName;
+    const pythonPath = getPythonPath(filePath);
+    const selections = vscode.window.activeTextEditor.selections
+      .map(s => vscode.window.activeTextEditor.document.getText(s))
+      .filter(s => !!s && !s.includes("\n") && !s.trim().includes(" "));
+    if (pythonPath && selections.length > 0) {
+      const importStatement = generateImportStatement(pythonPath, selections);
+      clipboardy.writeSync(importStatement);
+    }
+    if (pythonPath && selections.length == 0) {
+      clipboardy.writeSync(pythonPath);
+    }
+  } catch (e) {
+    console.log(e);
+  }
+}
+
+function generateImportStatement(pythonPath, selections) {
+  if (selections.length == 0) {
+    return `import ${pythonPath}`;
+  } else if (selections.length == 1) {
+    const selection = selections[0].trim();
+    return `from ${pythonPath} import ${selection}`;
+  }
+  const selection = selections.map(s => `\t${s.trim()},`).join("\n");
+  return `from ${pythonPath} import (\n${selection}\n)`;
+}
+
 function generatePath(pythonPath, selections, withCommand = false) {
   if (pythonPath && selections.length > 0) {
     return generatePathWithSelection(pythonPath, selections, withCommand);
@@ -135,6 +167,10 @@ function activate(context) {
   let djangoTestPathWithCommand = vscode.commands.registerCommand(
     "extension.copyDjangoTestPathWithoutCommand",
     copyDjangoTestPathWithoutCommand
+  );
+  let importStatetement = vscode.commands.registerCommand(
+    "extension.copyImportStatement",
+    copyImportStatement
   );
   context.subscriptions.push(djangoTestPathWithoutCommand);
   context.subscriptions.push(djangoTestPathWithCommand);
