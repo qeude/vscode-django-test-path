@@ -159,5 +159,5 @@
     "postinstall": "node ./node_modules/vscode/bin/install",
     "test": "node ./node_modules/vscode/bin/test"
   },
-  "version": "0.2.0"
+  "version": "0.3.0"
 }
